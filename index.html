@@ -1,13 +1,540 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>ella.to</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio showcasing my coding projects with links to GitHub repositories. Explore my work in web development, software engineering, and open source contributions."
+    />
+    <meta
+      name="keywords"
+      content="portfolio, projects, github, web development, software engineer, coding"
+    />
+    <meta name="author" content="Ali Najafizadeh" />
+    <title>Ella.to</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --bg-primary: #0a0e27;
+        --bg-secondary: #151932;
+        --bg-card: #1a1f3a;
+        --text-primary: #e2e8f0;
+        --text-secondary: #94a3b8;
+        --accent: #60a5fa;
+        --accent-hover: #3b82f6;
+        --border: #2d3548;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* Header */
+      header {
+        padding: 4rem 2rem 3rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(
+          135deg,
+          var(--text-primary) 0%,
+          var(--accent) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: fadeInDown 0.8s ease-out;
+      }
+
+      .subtitle {
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        color: var(--text-secondary);
+        margin-bottom: 1rem;
+        animation: fadeInUp 0.8s ease-out 0.2s both;
+      }
+
+      .intro {
+        max-width: 700px;
+        margin: 2rem auto 0;
+        font-size: 1.1rem;
+        color: var(--text-secondary);
+        line-height: 1.8;
+        animation: fadeInUp 0.8s ease-out 0.4s both;
+      }
+
+      /* Projects Grid */
+      main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      .projects-header {
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+
+      .projects-header h2 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        color: var(--text-primary);
+      }
+
+      .projects-count {
+        color: var(--text-secondary);
+        font-size: 1rem;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 4rem;
+      }
+
+      /* Project Card */
+      .project-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.75rem;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .project-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--accent);
+        box-shadow: 0 12px 24px rgba(96, 165, 250, 0.15);
+      }
+
+      .project-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+      }
+
+      .project-card h3 {
+        font-size: 1.35rem;
+        color: var(--text-primary);
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+
+      .project-card p {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1.25rem;
+      }
+
+      .github-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--accent);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        position: relative;
+      }
+
+      .github-link::after {
+        content: "→";
+        transition: transform 0.2s ease;
+      }
+
+      .github-link:hover {
+        color: var(--accent-hover);
+        gap: 0.75rem;
+      }
+
+      .github-link:hover::after {
+        transform: translateX(4px);
+      }
+
+      /* GitHub Icon */
+      .github-icon {
+        width: 20px;
+        height: 20px;
+        fill: currentColor;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 3rem 2rem;
+        border-top: 1px solid var(--border);
+        margin-top: 4rem;
+        color: var(--text-secondary);
+      }
+
+      footer a {
+        color: var(--accent);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      footer a:hover {
+        color: var(--accent-hover);
+      }
+
+      /* Animations */
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        header {
+          padding: 3rem 1.5rem 2rem;
+        }
+
+        .projects-grid {
+          grid-template-columns: 1fr;
+          gap: 1.25rem;
+        }
+
+        main {
+          padding: 1.5rem;
+        }
+      }
+
+      /* Mobile optimizations */
+      @media (max-width: 640px) {
+        .project-card {
+          padding: 1.5rem;
+        }
+      }
+
+      /* Accessibility */
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
   </head>
   <body>
-    <p>
-      Nothing to see here;
-      <a href="https://github.com/ella-to">Click Here</a>.
-    </p>
+    <header>
+      <h1>Projects</h1>
+      <p class="subtitle">High quality developer tools</p>
+      <p class="intro">
+        Explore the collection of production-ready open-source projects. Each
+        tool is crafted with precision, released under the MIT License, and
+        actively deployed in real-world applications.
+      </p>
+    </header>
+
+    <main>
+      <div class="projects-header">
+        <h2>Featured Work</h2>
+        <p class="projects-count">8 Projects</p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-header">
+            <h3>Baker</h3>
+          </div>
+          <p>
+            Baker is a dynamic HTTP reverse proxy with a focus on extensibility
+            and flexibility. It is designed to adapt to a variety of
+            orchestration engines and provides dynamic configuration
+            capabilities, eliminating the need to restart the reverse proxy when
+            changing configurations.
+          </p>
+          <a
+            href="https://github.com/ella-to/baker"
+            class="github-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              class="github-icon"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+              />
+            </svg>
+            View on GitHub
+          </a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-header">
+            <h3>Bus</h3>
+          </div>
+          <p>
+            bus is a robust, persistent message bus designed to streamline event
+            handling with simplicity and flexibility. it is high performance,
+            intuitive APIs, and resilient message persistence.
+          </p>
+          <a
+            href="https://github.com/ella-to/bus"
+            class="github-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              class="github-icon"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+              />
+            </svg>
+            View on GitHub
+          </a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-header">
+            <h3>Ella</h3>
+          </div>
+          <p>
+            Ella, is yet another compiler to produce Go and Typescript code
+            based on simple and easy-to-read schema IDL. There are many tools
+            like gRPC or Twirp to generate codes, but this little compiler is
+            designed based on my views of 12+ years of developing backends and
+            APIs. I wanted to simplify the tooling and produce almost perfect
+            optimized, handcrafted code that can be read and understood.
+          </p>
+          <a
+            href="https://github.com/ella-to/ella"
+            class="github-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              class="github-icon"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+              />
+            </svg>
+            View on GitHub
+          </a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-header">
+            <h3>JsonRpc v2</h3>
+          </div>
+          <p>
+            A comprehensive, production-ready JSON-RPC 2.0 implementation for Go
+            with support for multiple transport protocols (HTTP, TCP, UDP).
+          </p>
+          <a
+            href="https://github.com/ella-to/jsonrpc"
+            class="github-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              class="github-icon"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+              />
+            </svg>
+            View on GitHub
+          </a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-header">
+            <h3>Sahar</h3>
+          </div>
+          <p>
+            A powerful, declarative layout engine for Go that enables you to
+            create professional PDF documents with ease
+          </p>
+          <a
+            href="https://github.com/ella-to/sahar"
+            class="github-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              class="github-icon"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+              />
+            </svg>
+            View on GitHub
+          </a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-header">
+            <h3>SSE</h3>
+          </div>
+          <p>
+            A simple, optimized, and high-performance Server-Sent Events (SSE)
+            client and server library for Go
+          </p>
+          <a
+            href="https://github.com/ella-to/sse"
+            class="github-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              class="github-icon"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+              />
+            </svg>
+            View on GitHub
+          </a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-header">
+            <h3>Immuta</h3>
+          </div>
+          <p>
+            Immuta is a Append Only Log implementation based on single writer,
+            multiple readers concept. it is designed for high performance and
+            reliability, making it suitable for event sourcing, audit logging.
+          </p>
+          <a
+            href="https://github.com/ella-to/immuta"
+            class="github-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              class="github-icon"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+              />
+            </svg>
+            View on GitHub
+          </a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-header">
+            <h3>Solid</h3>
+          </div>
+          <p>
+            solid is a high-performance signaling/broadcast library for Go
+            designed to be extremely fast and memory-efficient. The broadcast
+            mechanism is zero-allocation and provides reliable one-to-many
+            communication patterns for coordinating goroutines.
+          </p>
+          <a
+            href="https://github.com/ella-to/solid"
+            class="github-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              class="github-icon"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+              />
+            </svg>
+            View on GitHub
+          </a>
+        </article>
+      </div>
+    </main>
+
+    <footer>
+      <p>Built with ❤️ by a passionate developer</p>
+      <p style="margin-top: 0.5rem">
+        Find me on
+        <a
+          href="https://github.com/ella-to"
+          target="_blank"
+          rel="noopener noreferrer"
+          >GitHub</a
+        >
+      </p>
+    </footer>
   </body>
 </html>
