@@ -1,0 +1,31 @@
+{
+  "host": "ella.to",
+  "github_org": "ella-to",
+  "packages": [
+    { "name": "baker" },
+    { "name": "blob" },
+    { "name": "bus" },
+    { "name": "crypto" },
+    { "name": "ella" },
+    { "name": "flex" },
+    { "name": "hash" },
+    { "name": "hismetric" },
+    { "name": "httputil" },
+    { "name": "immuta" },
+    { "name": "jsonrpc" },
+    { "name": "jsonrpc2" },
+    { "name": "logger" },
+    { "name": "orc" },
+    { "name": "otel" },
+    { "name": "pipe" },
+    { "name": "sahar" },
+    { "name": "sherlock" },
+    { "name": "slogx" },
+    { "name": "solid" },
+    { "name": "sqlite" },
+    { "name": "sse" },
+    { "name": "stripe" },
+    { "name": "task" },
+    { "name": "vault" }
+  ]
+}
