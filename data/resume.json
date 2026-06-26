@@ -259,6 +259,14 @@
       "url": "https://github.com/blockthrough/selfupdate.go",
       "language": "Go",
       "tags": ["CLI", "Tooling", "GitHub Actions"]
+    },
+    {
+      "name": "microui",
+      "tagline": "A tiny immediate-mode UI library for Go",
+      "description": "A pure-Go (no cgo, no dependencies) immediate-mode UI library ported from rxi/microui. It is renderer-agnostic — each frame it emits a list of draw commands you render with any backend — and ships built-in controls (windows, panels, buttons, sliders, textboxes, trees, popups) plus a ready-made terminal renderer.",
+      "url": "https://github.com/ella-to/microui",
+      "language": "Go",
+      "tags": ["UI", "Immediate Mode", "TUI"]
     }
   ],
   "education": [
