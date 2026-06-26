@@ -26,6 +26,7 @@
     { "name": "sse" },
     { "name": "stripe" },
     { "name": "task" },
-    { "name": "vault" }
+    { "name": "vault" },
+    { "name": "microui" }
   ]
 }
