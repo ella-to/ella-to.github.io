@@ -27,6 +27,7 @@
     { "name": "stripe" },
     { "name": "task" },
     { "name": "vault" },
-    { "name": "microui" }
+    { "name": "microui" },
+    { "name": "peer" }
   ]
 }
