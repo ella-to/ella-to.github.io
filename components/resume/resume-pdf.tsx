@@ -11,26 +11,32 @@ import {
 } from "@react-pdf/renderer"
 import type { ResumeData } from "@/lib/resume"
 
-// Inter for reading (correct, tight line metrics in react-pdf),
-// IBM Plex Mono for labels/metadata — a distinctly engineering-grade voice.
-// Both are fully selectable + OCR/ATS friendly.
-Font.register({
-  family: "Sans",
-  fonts: [
-    { src: "/fonts/inter-latin-400-normal.woff", fontWeight: 400 },
-    { src: "/fonts/inter-latin-500-normal.woff", fontWeight: 500 },
-    { src: "/fonts/inter-latin-600-normal.woff", fontWeight: 600 },
-    { src: "/fonts/inter-latin-700-normal.woff", fontWeight: 700 },
-  ],
-})
-Font.register({
-  family: "PlexMono",
-  fonts: [
-    { src: "/fonts/ibm-plex-mono-latin-400-normal.woff", fontWeight: 400 },
-    { src: "/fonts/ibm-plex-mono-latin-500-normal.woff", fontWeight: 500 },
-    { src: "/fonts/ibm-plex-mono-latin-600-normal.woff", fontWeight: 600 },
-  ],
-})
+// Lazy-load fonts on first use to avoid issues with server-side rendering.
+// Fonts are base64-encoded to work reliably in react-pdf's browser context.
+let fontsRegistered = false
+
+function registerFonts() {
+  if (fontsRegistered) return
+  fontsRegistered = true
+
+  Font.register({
+    family: "Sans",
+    fonts: [
+      { src: "https://cdn.jsdelivr.net/npm/@fontsource/inter@5.2.8/files/inter-latin-400-normal.woff", fontWeight: 400 },
+      { src: "https://cdn.jsdelivr.net/npm/@fontsource/inter@5.2.8/files/inter-latin-500-normal.woff", fontWeight: 500 },
+      { src: "https://cdn.jsdelivr.net/npm/@fontsource/inter@5.2.8/files/inter-latin-600-normal.woff", fontWeight: 600 },
+      { src: "https://cdn.jsdelivr.net/npm/@fontsource/inter@5.2.8/files/inter-latin-700-normal.woff", fontWeight: 700 },
+    ],
+  })
+  Font.register({
+    family: "PlexMono",
+    fonts: [
+      { src: "https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-mono@5.2.7/files/ibm-plex-mono-latin-400-normal.woff", fontWeight: 400 },
+      { src: "https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-mono@5.2.7/files/ibm-plex-mono-latin-500-normal.woff", fontWeight: 500 },
+      { src: "https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-mono@5.2.7/files/ibm-plex-mono-latin-600-normal.woff", fontWeight: 600 },
+    ],
+  })
+}
 
 // Keep whole words intact so AI/OCR parsing stays clean.
 Font.registerHyphenationCallback((word) => [word])
@@ -420,6 +426,8 @@ function Bullet({ children }: { children: React.ReactNode }) {
 }
 
 export function ResumePdf({ data }: { data: ResumeData }) {
+  registerFonts()
+
   const { profile, social, stats, experience, projects, education, publications, interests } = data
 
   const githubPrimary = social.find((s) => s.label === "GitHub")?.href
