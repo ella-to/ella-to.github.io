@@ -8,7 +8,7 @@ import { ThemeToggle } from "@/components/resume/theme-toggle"
 import { getResume } from "@/lib/resume"
 
 export default function Page() {
-  const resumeData = getResume('old')
+  const resumeData = getResume('new')
   const { profile } = resumeData
 
   return (

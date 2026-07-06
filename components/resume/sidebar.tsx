@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { Github, Mail, MapPin, ArrowUpRight } from "lucide-react"
-import { resume } from "@/lib/resume"
+import { resume, ResumeData } from "@/lib/resume"
 import { DownloadResume } from "@/components/resume/download-resume"
 import { cn } from "@/lib/utils"
 
@@ -18,9 +18,9 @@ const socialIcon: Record<string, typeof Github> = {
   Email: Mail,
 }
 
-export function Sidebar() {
+export function Sidebar({ resumeData = resume }: { resumeData?: ResumeData }) {
   const [active, setActive] = useState<string>("about")
-  const { profile, social } = resume
+  const { profile, social } = resumeData
 
   useEffect(() => {
     const sections = NAV.map((n) => document.getElementById(n.id)).filter(
@@ -73,7 +73,7 @@ export function Sidebar() {
           </span>
         </div>
 
-        <DownloadResume className="mt-6" />
+        <DownloadResume className="mt-6" resumeData={resumeData} />
 
         {/* In-page navigation with scroll-spy */}
         <nav className="mt-16 hidden lg:block" aria-label="In-page navigation">

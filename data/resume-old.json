@@ -1,0 +1,295 @@
+{
+  "profile": {
+    "name": "Ali Najafizadeh",
+    "title": "Lead Software Engineer",
+    "tagline": "I build resilient distributed systems and the developer tools that make them a joy to work with.",
+    "location": "Toronto, Ontario",
+    "email": "a.najafizadeh@gmail.com",
+    "phone": "available upon request",
+    "availability": "Available for Opportunities",
+    "summary": [
+      "Experienced software engineer with a strong background in building distributed systems and contributing to high-impact, developer-facing platforms. Over 14 years of experience working with Go, specializing in scalable backend components, resource optimization, and developer experience.",
+      "Proven ability to work independently and alongside highly technical teams, leading initiatives like distributed tracing, identity management, and internal SDK platforms. Skilled in authentication and authorization protocols such as OAuth2 and SSO.",
+      "Comfortable working asynchronously in fast-paced, remote-first environments. Passionate about secure access, user identity, and tooling that quietly removes friction for entire engineering organizations."
+    ]
+  },
+  "social": [
+    {
+      "label": "GitHub",
+      "href": "https://github.com/alinz",
+      "handle": "alinz"
+    },
+    {
+      "label": "GitHub",
+      "href": "https://github.com/ella-to",
+      "handle": "ella-to"
+    },
+    {
+      "label": "Email",
+      "href": "mailto:a.najafizadeh@gmail.com",
+      "handle": "a.najafizadeh@gmail.com"
+    }
+  ],
+  "stats": [
+    {
+      "value": "14+",
+      "label": "Years with Go"
+    },
+    {
+      "value": "27",
+      "label": "Open-source repos"
+    },
+    {
+      "value": "8",
+      "label": "Companies led at"
+    }
+  ],
+  "interests": [
+    {
+      "category": "Distributed Systems",
+      "items": [
+        "Temporal",
+        "Kafka",
+        "Event Sourcing",
+        "Append-Only Logs",
+        "NATS.io"
+      ]
+    },
+    {
+      "category": "Backend",
+      "items": ["Golang", "Node", "Deno", "Python"]
+    },
+    {
+      "category": "Frontend",
+      "items": ["React", "React Native", "TypeScript"]
+    },
+    {
+      "category": "Observability & DX",
+      "items": [
+        "OpenTelemetry",
+        "Grafana",
+        "Tempo",
+        "CLI Tooling",
+        "Code Generation"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Gravity Climate",
+      "role": "Senior Software Engineer",
+      "period": "2025 — 2026",
+      "location": "Remote",
+      "url": "https://www.gravityclimate.com",
+      "highlights": [
+        "Contributed to the carbon accounting and emissions platform, building backend services that ingest and normalize large volumes of operational data.",
+        "Focused on data pipeline reliability and API ergonomics during a five-month engagement.",
+        "Collaborated closely with a small, highly technical team in a fast-moving climate-tech environment."
+      ],
+      "stack": ["Go", "Data Pipelines", "APIs"]
+    },
+    {
+      "company": "Coinbase",
+      "role": "Senior Software Engineer (Contractor)",
+      "period": "2024 — 2025",
+      "location": "Remote",
+      "url": "https://coinbase.com",
+      "highlights": [
+        "Implemented a platform enabling any developer to build and deploy end-to-end systems within Coinbase infrastructure, democratizing access to core capabilities.",
+        "Designed and built developer tools and abstractions that simplified the complexity of distributed system architecture, allowing teams to focus on business logic.",
+        "Enhanced developer experience by creating standardized patterns and frameworks that reduced onboarding time and accelerated feature delivery."
+      ],
+      "stack": ["Go", "Platform Engineering", "Developer Tools", "Distributed Systems"]
+    },
+    {
+      "company": "Blockthrough",
+      "role": "Tech Lead, Sr. Software Engineer",
+      "period": "2023 — 2025",
+      "location": "Remote",
+      "url": "https://blockthrough.com",
+      "highlights": [
+        "Led a team improving and optimizing the open-source Prebid Server project (Go) for internal use, enhancing ad-tech capabilities and performance.",
+        "Owned btctl, the Blockthrough command-line tool, streamlining deployment workflows and the overall engineering experience.",
+        "Open-sourced a self-updating SDK and CLI that lets any Go application update itself via GitHub Actions, dramatically simplifying releases.",
+        "Pioneered distributed tracing at Blockthrough and Eye/o, introducing OpenTelemetry as a core observability tool with end-to-end visibility across microservices.",
+        "Architected a Grafana + Tempo integration for real-time analysis and troubleshooting of complex distributed systems, significantly improving debugging and reliability."
+      ],
+      "stack": ["Go", "Prebid Server", "OpenTelemetry", "Grafana", "Tempo"]
+    },
+    {
+      "company": "Brex",
+      "role": "Tech Lead, Sr. Software Engineer",
+      "period": "2021 — 2023",
+      "location": "Remote",
+      "url": "https://brex.com",
+      "highlights": [
+        "Member of the CTO office, driving initiatives to improve developer experience across Brex by optimizing workflows, tools, and productivity.",
+        "Built internal tools including brexctl, a control command-line that streamlined operations and boosted developer efficiency.",
+        "Developed a dynamic preview environment enabling seamless staging for testing and pre-production scenarios.",
+        "Architected integration plugins for several payment gateway systems, ensuring secure payment processing.",
+        "Contributed to the Temporal workflow engine used internally."
+      ],
+      "stack": ["Go", "Temporal", "Developer Experience", "Payments"]
+    },
+    {
+      "company": "Flipp",
+      "role": "Tech Lead, Software Engineer",
+      "period": "2018 — 2021",
+      "location": "Toronto, Canada",
+      "url": "https://flipp.com",
+      "highlights": [
+        "Led the initiative to split a large Ruby on Rails monolith into smaller modular services integrated with a Kafka pipeline, freeing teams to choose the right language per task.",
+        "Designed a one-click project scaffolding system that automates project creation in Node.js, Ruby, Go, and Scala — generating repos, configuring CircleCI, and provisioning staging and production environments.",
+        "Built high-impact tools and libraries including a Golang Avro-Kafka library for efficient serialization and streaming data processing tools in Node.js for real-time pipelines."
+      ],
+      "stack": ["Go", "Kafka", "Avro", "Node.js", "CircleCI"]
+    },
+    {
+      "company": "Alida (Vision Critical)",
+      "role": "Lead Software Engineer",
+      "period": "2017 — 2018",
+      "location": "Toronto, Canada",
+      "url": "https://alida.com",
+      "highlights": [
+        "Played a key role during the acquisition of Pressly Inc, overseeing integration of Alida's C#/.NET system into Pressly's Go-based backend.",
+        "Developed custom tools to bridge the two systems, improving compatibility across technologies.",
+        "Wrote and executed migration scripts for a smooth transition and data upgrade, minimizing downtime and maintaining stability."
+      ],
+      "stack": ["Go", "C#", ".NET", "Migrations"]
+    },
+    {
+      "company": "Pressly (acquired by Alida)",
+      "role": "Senior Software Engineer",
+      "period": "2015 — 2017",
+      "location": "Toronto, Canada",
+      "highlights": [
+        "Led a zero-downtime refactor migrating a Ruby on Rails + MongoDB system to a scalable Golang + PostgreSQL architecture with continuous availability.",
+        "Adopted React Native early to ship iOS and Android apps from a single codebase, accelerating development.",
+        "Built a self-updating React Native app by integrating Golang and Golang Mobile for automated updates across both platforms."
+      ],
+      "stack": ["Go", "PostgreSQL", "React Native", "Golang Mobile"]
+    },
+    {
+      "company": "UXP Systems",
+      "role": "Senior Software Engineer",
+      "period": "2011 — 2015",
+      "location": "Toronto, Canada",
+      "highlights": [
+        "Designed a bi-directional messaging system using the Netty framework in Java, leveraging non-blocking I/O for high volumes of concurrent connections and low-latency communication.",
+        "Led front-end architecture with Backbone.js, building an in-house toolchain to compile and bundle JavaScript assets for optimized production deployment.",
+        "Developed software and libraries for set-top boxes used by major telecoms including Rogers and Telus, enhancing media streaming, device management, and remote connectivity."
+      ],
+      "stack": ["Java", "Netty", "Backbone.js", "Set-top Boxes"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "orc",
+      "tagline": "Durable workflow orchestrator for Go, backed by SQLite",
+      "description": "A lightweight, embeddable, durable workflow orchestrator. Write ordinary Go functions and orc checkpoints their inputs, step outputs, and completion to SQLite — surviving crashes and resuming in-flight workflows. Includes durable queues, inter-workflow messaging, cron scheduling, and a bundled web dashboard.",
+      "url": "https://github.com/ella-to/orc",
+      "language": "Go",
+      "tags": ["Workflows", "SQLite", "Durable Execution"],
+      "featured": true
+    },
+    {
+      "name": "ella",
+      "tagline": "A compiler that generates Go & TypeScript HTTP clients and servers",
+      "description": "Yet another compiler, designed from 12+ years of building backends and APIs. From a simple, readable schema IDL it emits almost perfectly optimized, handcrafted code you can actually read. Supports six HTTP communication patterns including SSE, file uploads, and binary streaming.",
+      "url": "https://github.com/ella-to/ella",
+      "language": "Go",
+      "tags": ["Compiler", "RPC", "Code Generation"],
+      "featured": true
+    },
+    {
+      "name": "bus",
+      "tagline": "A persistent, high-performance message bus",
+      "description": "A lightweight message bus with zero external dependencies — no Redis, Kafka, or RabbitMQ required. Persistent by default with append-only logs, HTTP/SSE transport for any language, pattern matching, request/reply, optional NaCl encryption, and automatic redelivery.",
+      "url": "https://github.com/ella-to/bus",
+      "language": "Go",
+      "tags": ["Message Bus", "Event-Driven", "SSE"],
+      "featured": true
+    },
+    {
+      "name": "flex",
+      "tagline": "A cell-based flexbox layout engine for the terminal",
+      "description": "A composable layout engine rendered with lipgloss v2 and ready to drop into Bubble Tea v2. Synthesizes exact integer cell sizing with a declarative Fit / Fixed / Grow model and first-class text alignment for precise, responsive terminal UIs.",
+      "url": "https://github.com/ella-to/flex",
+      "language": "Go",
+      "tags": ["TUI", "Layout Engine", "Bubble Tea"],
+      "featured": true
+    },
+    {
+      "name": "sahar",
+      "tagline": "A declarative layout engine in Go",
+      "description": "A composable layout engine with a clean multi-pass algorithm and a Fit / Fixed / Grow sizing model with full alignment — the ergonomic foundation that inspired flex.",
+      "url": "https://github.com/ella-to/sahar",
+      "language": "Go",
+      "tags": ["Layout Engine", "Rendering"]
+    },
+    {
+      "name": "immuta",
+      "tagline": "A simple immutable, append-only log",
+      "description": "A focused append-only log library providing durable, ordered storage — the persistence backbone behind the bus message broker.",
+      "url": "https://github.com/ella-to/immuta",
+      "language": "Go",
+      "tags": ["Storage", "Append-Only Log"]
+    },
+    {
+      "name": "jsonrpc",
+      "tagline": "JSON-RPC v2 over HTTP, TCP and UDP",
+      "description": "A fresh take on JSON-RPC v2 in Go with multi-transport support, designed for simple, predictable service communication.",
+      "url": "https://github.com/ella-to/jsonrpc",
+      "language": "Go",
+      "tags": ["RPC", "Networking"]
+    },
+    {
+      "name": "sqlite",
+      "tagline": "A set of ergonomic tools on top of the SQLite Go library",
+      "description": "A wrapper and toolchain around SQLite in Go, providing pooling and ergonomic helpers used as the storage layer for orc and other ella.to projects.",
+      "url": "https://github.com/ella-to/sqlite",
+      "language": "Go",
+      "tags": ["SQLite", "Database"]
+    },
+    {
+      "name": "selfupdate.go",
+      "tagline": "Self-update toolchain for Go CLI programs",
+      "description": "A dead-simple SDK and CLI for updating Go binaries that leverages GitHub Releases and Actions, letting any Go application keep itself up to date.",
+      "url": "https://github.com/blockthrough/selfupdate.go",
+      "language": "Go",
+      "tags": ["CLI", "Tooling", "GitHub Actions"]
+    },
+    {
+      "name": "microui",
+      "tagline": "A tiny immediate-mode UI library for Go",
+      "description": "A pure-Go (no cgo, no dependencies) immediate-mode UI library ported from rxi/microui. It is renderer-agnostic — each frame it emits a list of draw commands you render with any backend — and ships built-in controls (windows, panels, buttons, sliders, textboxes, trees, popups) plus a ready-made terminal renderer.",
+      "url": "https://github.com/ella-to/microui",
+      "language": "Go",
+      "tags": ["UI", "Immediate Mode", "TUI"]
+    }
+  ],
+  "education": [
+    {
+      "school": "Ontario Tech University",
+      "degree": "M.Sc., Software Engineering",
+      "period": "Sept 2009 — Aug 2011",
+      "url": "https://ontariotechu.ca"
+    },
+    {
+      "school": "Ontario Tech University",
+      "degree": "B.Eng., Software Engineering",
+      "period": "Sept 2005 — Apr 2009",
+      "url": "https://ontariotechu.ca"
+    }
+  ],
+  "publications": [
+    {
+      "title": "Challenges in the Implementation and Simulation for Wireless Side-Channel based on Intentionally Corrupted FCS",
+      "url": "#"
+    },
+    {
+      "title": "Network performance of a wireless sensor network for temperature monitoring in vineyards",
+      "url": "#"
+    }
+  ]
+}
