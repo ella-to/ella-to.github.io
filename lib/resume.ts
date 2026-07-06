@@ -1,4 +1,5 @@
-import data from "@/data/resume.json"
+import newData from "@/data/resume.json"
+import oldData from "@/data/resume-old.json"
 
 export type Social = { label: string; href: string; handle: string }
 export type Stat = { value: string; label: string }
@@ -56,4 +57,8 @@ export type ResumeData = {
   publications: Publication[]
 }
 
-export const resume = data as ResumeData
+export const getResume = (version: 'new' | 'old' = 'old'): ResumeData => {
+  return (version === 'new' ? newData : oldData) as ResumeData
+}
+
+export const resume = oldData as ResumeData

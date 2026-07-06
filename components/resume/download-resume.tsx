@@ -2,10 +2,10 @@
 
 import { useState } from "react"
 import { Download, Loader2 } from "lucide-react"
-import { resume } from "@/lib/resume"
+import { resume, ResumeData } from "@/lib/resume"
 import { cn } from "@/lib/utils"
 
-export function DownloadResume({ className }: { className?: string }) {
+export function DownloadResume({ className, resumeData = resume }: { className?: string; resumeData?: ResumeData }) {
   const [loading, setLoading] = useState(false)
 
   const handleDownload = async () => {
@@ -19,12 +19,12 @@ export function DownloadResume({ className }: { className?: string }) {
         import("@/components/resume/resume-pdf"),
       ])
 
-      const blob = await pdf(<ResumePdf data={resume} />).toBlob()
+      const blob = await pdf(<ResumePdf data={resumeData} />).toBlob()
 
       const url = URL.createObjectURL(blob)
       const link = document.createElement("a")
       link.href = url
-      link.download = `${resume.profile.name.replace(/\s+/g, "-")}-Resume.pdf`
+      link.download = `${resumeData.profile.name.replace(/\s+/g, "-")}-Resume.pdf`
       document.body.appendChild(link)
       link.click()
       link.remove()

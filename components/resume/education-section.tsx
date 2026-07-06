@@ -1,8 +1,8 @@
 import { ArrowUpRight, GraduationCap, FileText } from "lucide-react"
-import { resume } from "@/lib/resume"
+import { resume, ResumeData } from "@/lib/resume"
 
-export function EducationSection() {
-  const { education, publications } = resume
+export function EducationSection({ resumeData = resume }: { resumeData?: ResumeData }) {
+  const { education, publications } = resumeData
 
   return (
     <section id="education" aria-label="Education and publications" className="scroll-mt-24">

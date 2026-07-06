@@ -2,11 +2,11 @@
 
 import { useState } from "react"
 import { ArrowUpRight, Star } from "lucide-react"
-import { resume } from "@/lib/resume"
+import { resume, ResumeData } from "@/lib/resume"
 import { cn } from "@/lib/utils"
 
-export function ProjectsSection() {
-  const { projects } = resume
+export function ProjectsSection({ resumeData = resume }: { resumeData?: ResumeData }) {
+  const { projects } = resumeData
   const [showAll, setShowAll] = useState(false)
 
   const featured = projects.filter((p) => p.featured)

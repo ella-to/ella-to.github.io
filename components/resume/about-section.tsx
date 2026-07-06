@@ -1,7 +1,7 @@
-import { resume } from "@/lib/resume"
+import { resume, ResumeData } from "@/lib/resume"
 
-export function AboutSection() {
-  const { profile, stats, interests } = resume
+export function AboutSection({ resumeData = resume }: { resumeData?: ResumeData }) {
+  const { profile, stats, interests } = resumeData
 
   return (
     <section id="about" aria-label="About" className="scroll-mt-24">

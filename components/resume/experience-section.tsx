@@ -1,9 +1,9 @@
 import { ArrowUpRight } from "lucide-react"
-import { resume } from "@/lib/resume"
+import { resume, ResumeData } from "@/lib/resume"
 import { cn } from "@/lib/utils"
 
-export function ExperienceSection() {
-  const { experience } = resume
+export function ExperienceSection({ resumeData = resume }: { resumeData?: ResumeData }) {
+  const { experience } = resumeData
 
   return (
     <section
