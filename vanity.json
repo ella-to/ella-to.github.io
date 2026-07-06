@@ -28,6 +28,7 @@
     { "name": "task" },
     { "name": "vault" },
     { "name": "microui" },
-    { "name": "peer" }
+    { "name": "peer" },
+    { "name": "ifac" }
   ]
 }
