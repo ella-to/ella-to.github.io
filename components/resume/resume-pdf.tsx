@@ -11,32 +11,6 @@ import {
 } from "@react-pdf/renderer"
 import type { ResumeData } from "@/lib/resume"
 
-// Lazy-load fonts on first use to avoid issues with server-side rendering.
-// Fonts are base64-encoded to work reliably in react-pdf's browser context.
-let fontsRegistered = false
-
-function registerFonts() {
-  if (fontsRegistered) return
-  fontsRegistered = true
-
-  Font.register({
-    family: "Sans",
-    fonts: [
-      { src: "https://cdn.jsdelivr.net/npm/@fontsource/inter@5.2.8/files/inter-latin-400-normal.woff", fontWeight: 400 },
-      { src: "https://cdn.jsdelivr.net/npm/@fontsource/inter@5.2.8/files/inter-latin-500-normal.woff", fontWeight: 500 },
-      { src: "https://cdn.jsdelivr.net/npm/@fontsource/inter@5.2.8/files/inter-latin-600-normal.woff", fontWeight: 600 },
-      { src: "https://cdn.jsdelivr.net/npm/@fontsource/inter@5.2.8/files/inter-latin-700-normal.woff", fontWeight: 700 },
-    ],
-  })
-  Font.register({
-    family: "PlexMono",
-    fonts: [
-      { src: "https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-mono@5.2.7/files/ibm-plex-mono-latin-400-normal.woff", fontWeight: 400 },
-      { src: "https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-mono@5.2.7/files/ibm-plex-mono-latin-500-normal.woff", fontWeight: 500 },
-      { src: "https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-mono@5.2.7/files/ibm-plex-mono-latin-600-normal.woff", fontWeight: 600 },
-    ],
-  })
-}
 
 // Keep whole words intact so AI/OCR parsing stays clean.
 Font.registerHyphenationCallback((word) => [word])
@@ -142,7 +116,7 @@ const styles = StyleSheet.create({
     paddingBottom: PADBOT,
     paddingHorizontal: PADX,
     backgroundColor: C.bg,
-    fontFamily: "Sans",
+    fontFamily: "Helvetica",
     fontSize: 9,
     lineHeight: 1.42,
     color: C.body,
@@ -156,7 +130,7 @@ const styles = StyleSheet.create({
   },
   headerLeft: { flex: 1, paddingRight: 18 },
   eyebrow: {
-    fontFamily: "PlexMono",
+    fontFamily: "Courier",
     fontSize: 7.5,
     color: C.accent,
     letterSpacing: 1.6,
@@ -170,7 +144,7 @@ const styles = StyleSheet.create({
     lineHeight: 1.05,
   },
   title: {
-    fontFamily: "PlexMono",
+    fontFamily: "Courier",
     fontSize: 9,
     color: C.accent,
     letterSpacing: 0.4,
@@ -185,7 +159,7 @@ const styles = StyleSheet.create({
   },
   headerRight: { alignItems: "flex-end", paddingTop: 2 },
   contactLine: {
-    fontFamily: "PlexMono",
+    fontFamily: "Courier",
     fontSize: 8,
     color: C.body,
     marginBottom: 4,
@@ -206,7 +180,7 @@ const styles = StyleSheet.create({
     marginRight: 5,
   },
   availText: {
-    fontFamily: "PlexMono",
+    fontFamily: "Courier",
     fontSize: 7.5,
     color: C.muted,
   },
@@ -233,7 +207,7 @@ const styles = StyleSheet.create({
     letterSpacing: -0.5,
   },
   statLabel: {
-    fontFamily: "PlexMono",
+    fontFamily: "Courier",
     fontSize: 6.8,
     color: C.muted,
     letterSpacing: 0.5,
@@ -255,7 +229,7 @@ const styles = StyleSheet.create({
     marginBottom: 9,
   },
   secIndex: {
-    fontFamily: "PlexMono",
+    fontFamily: "Courier",
     fontSize: 8,
     color: C.accent,
     marginRight: 8,
@@ -334,7 +308,7 @@ const styles = StyleSheet.create({
   bulletDot: { width: 10, color: C.accent, fontSize: 8, lineHeight: 1.42 },
   bulletText: { flex: 1, color: C.body, lineHeight: 1.42 },
   techLine: {
-    fontFamily: "PlexMono",
+    fontFamily: "Courier",
     marginTop: 5,
     fontSize: 7,
     color: C.muted,
@@ -355,14 +329,14 @@ const styles = StyleSheet.create({
   },
   cardHead: { flexDirection: "row", alignItems: "baseline", marginBottom: 2 },
   cardName: {
-    fontFamily: "PlexMono",
+    fontFamily: "Courier",
     fontSize: 9.5,
     fontWeight: 600,
     color: C.ink,
     textDecoration: "none",
   },
   cardLang: {
-    fontFamily: "PlexMono",
+    fontFamily: "Courier",
     fontSize: 6.5,
     color: C.accent,
     marginLeft: 6,
@@ -374,7 +348,7 @@ const styles = StyleSheet.create({
   // ---------- Skills ----------
   skillRow: { flexDirection: "row", marginBottom: 6, alignItems: "flex-start" },
   skillCat: {
-    fontFamily: "PlexMono",
+    fontFamily: "Courier",
     fontSize: 7.5,
     color: C.accent,
     width: 130,
@@ -399,7 +373,7 @@ const styles = StyleSheet.create({
     borderTopColor: C.borderSoft,
     flexDirection: "row",
     justifyContent: "space-between",
-    fontFamily: "PlexMono",
+    fontFamily: "Courier",
     fontSize: 6.8,
     color: C.faint,
     letterSpacing: 0.5,
@@ -426,8 +400,6 @@ function Bullet({ children }: { children: React.ReactNode }) {
 }
 
 export function ResumePdf({ data }: { data: ResumeData }) {
-  registerFonts()
-
   const { profile, social, stats, experience, projects, education, publications, interests } = data
 
   const githubPrimary = social.find((s) => s.label === "GitHub")?.href
