@@ -17,18 +17,18 @@ import type { ResumeData } from "@/lib/resume"
 Font.register({
   family: "Sans",
   fonts: [
-    { src: "https://cdn.jsdelivr.net/npm/fontsource-inter@5.0.16/files/inter-latin-400-normal.ttf", fontWeight: 400 },
-    { src: "https://cdn.jsdelivr.net/npm/fontsource-inter@5.0.16/files/inter-latin-500-normal.ttf", fontWeight: 500 },
-    { src: "https://cdn.jsdelivr.net/npm/fontsource-inter@5.0.16/files/inter-latin-600-normal.ttf", fontWeight: 600 },
-    { src: "https://cdn.jsdelivr.net/npm/fontsource-inter@5.0.16/files/inter-latin-700-normal.ttf", fontWeight: 700 },
+    { src: "https://cdn.jsdelivr.net/npm/@fontsource/inter@5.0.16/files/inter-latin-400-normal.ttf", fontWeight: 400 },
+    { src: "https://cdn.jsdelivr.net/npm/@fontsource/inter@5.0.16/files/inter-latin-500-normal.ttf", fontWeight: 500 },
+    { src: "https://cdn.jsdelivr.net/npm/@fontsource/inter@5.0.16/files/inter-latin-600-normal.ttf", fontWeight: 600 },
+    { src: "https://cdn.jsdelivr.net/npm/@fontsource/inter@5.0.16/files/inter-latin-700-normal.ttf", fontWeight: 700 },
   ],
 })
 Font.register({
   family: "PlexMono",
   fonts: [
-    { src: "https://cdn.jsdelivr.net/npm/fontsource-ibm-plex-mono@5.0.13/files/ibm-plex-mono-latin-400-normal.ttf", fontWeight: 400 },
-    { src: "https://cdn.jsdelivr.net/npm/fontsource-ibm-plex-mono@5.0.13/files/ibm-plex-mono-latin-500-normal.ttf", fontWeight: 500 },
-    { src: "https://cdn.jsdelivr.net/npm/fontsource-ibm-plex-mono@5.0.13/files/ibm-plex-mono-latin-600-normal.ttf", fontWeight: 600 },
+    { src: "https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-mono@5.0.13/files/ibm-plex-mono-latin-400-normal.ttf", fontWeight: 400 },
+    { src: "https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-mono@5.0.13/files/ibm-plex-mono-latin-500-normal.ttf", fontWeight: 500 },
+    { src: "https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-mono@5.0.13/files/ibm-plex-mono-latin-600-normal.ttf", fontWeight: 600 },
   ],
 })
 
