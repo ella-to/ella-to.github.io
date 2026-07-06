@@ -14,20 +14,7 @@ export const metadata: Metadata = {
     "Lead Software Engineer with 14+ years building resilient distributed systems and developer tools in Go. Currently building 1Go at 1Password.",
   generator: "v0.app",
   icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
+    icon: "/favicon.svg",
     apple: "/apple-icon.png",
   },
 };

@@ -76,6 +76,24 @@
   ],
   "experience": [
     {
+      "company": "Coinbase",
+      "role": "Senior Software Engineer (Contractor)",
+      "period": "2026",
+      "location": "Remote",
+      "url": "https://coinbase.com",
+      "highlights": [
+        "Implemented a platform enabling any developer to build and deploy end-to-end systems within Coinbase infrastructure, democratizing access to core capabilities.",
+        "Designed and built developer tools and abstractions that simplified the complexity of distributed system architecture, allowing teams to focus on business logic.",
+        "Enhanced developer experience by creating standardized patterns and frameworks that reduced onboarding time and accelerated feature delivery."
+      ],
+      "stack": [
+        "Go",
+        "Platform Engineering",
+        "Developer Tools",
+        "Distributed Systems"
+      ]
+    },
+    {
       "company": "Gravity Climate",
       "role": "Senior Software Engineer",
       "period": "2025 — 2026",
@@ -87,19 +105,6 @@
         "Collaborated closely with a small, highly technical team in a fast-moving climate-tech environment."
       ],
       "stack": ["Go", "Data Pipelines", "APIs"]
-    },
-    {
-      "company": "Coinbase",
-      "role": "Senior Software Engineer (Contractor)",
-      "period": "2024 — 2025",
-      "location": "Remote",
-      "url": "https://coinbase.com",
-      "highlights": [
-        "Implemented a platform enabling any developer to build and deploy end-to-end systems within Coinbase infrastructure, democratizing access to core capabilities.",
-        "Designed and built developer tools and abstractions that simplified the complexity of distributed system architecture, allowing teams to focus on business logic.",
-        "Enhanced developer experience by creating standardized patterns and frameworks that reduced onboarding time and accelerated feature delivery."
-      ],
-      "stack": ["Go", "Platform Engineering", "Developer Tools", "Distributed Systems"]
     },
     {
       "company": "Blockthrough",
