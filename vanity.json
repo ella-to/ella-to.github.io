@@ -29,6 +29,7 @@
     { "name": "vault" },
     { "name": "microui" },
     { "name": "peer" },
-    { "name": "ifac" }
+    { "name": "ifac" },
+    { "name": "state" }
   ]
 }
