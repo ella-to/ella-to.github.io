@@ -30,6 +30,7 @@
     { "name": "microui" },
     { "name": "peer" },
     { "name": "ifac" },
-    { "name": "state" }
+    { "name": "state" },
+    { "name": "ecs" }
   ]
 }
