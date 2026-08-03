@@ -31,6 +31,7 @@
     { "name": "peer" },
     { "name": "ifac" },
     { "name": "state" },
-    { "name": "ecs" }
+    { "name": "ecs" },
+    { "name": "binpack" }
   ]
 }
