@@ -1,0 +1,41 @@
+---
+import vanity from '@data/vanity.json';
+
+/**
+ * One page per Go module in data/vanity.json.
+ *
+ * Each emits <meta name="go-import"> so `go get ella.to/<pkg>` resolves to the
+ * GitHub repo, and redirects human visitors to pkg.go.dev.
+ */
+export function getStaticPaths() {
+  const { host, github_org, packages } = vanity;
+
+  return packages.map((pkg: { name: string; repo?: string }) => {
+    const repoUrl = pkg.repo ?? `https://github.com/${github_org}/${pkg.name}`;
+    return {
+      params: { pkg: pkg.name },
+      props: { importPath: `${host}/${pkg.name}`, repoUrl },
+    };
+  });
+}
+
+const { importPath, repoUrl } = Astro.props;
+const goDoc = `https://pkg.go.dev/${importPath}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="go-import" content={`${importPath} git ${repoUrl}.git`} />
+    <meta
+      name="go-source"
+      content={`${importPath} ${repoUrl} ${repoUrl}/tree/main{/dir} ${repoUrl}/blob/main{/dir}/{file}#L{line}`}
+    />
+    <meta http-equiv="refresh" content={`0; url=${goDoc}`} />
+    <title>{importPath}</title>
+  </head>
+  <body>
+    <p>Nothing to see here; <a href={goDoc}>see the package on pkg.go.dev</a>.</p>
+  </body>
+</html>
