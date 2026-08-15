@@ -76,6 +76,20 @@
   ],
   "experience": [
     {
+      "company": "1Password",
+      "role": "Lead Golang Developer",
+      "period": "2026 — Present",
+      "location": "Remote",
+      "url": "https://1password.com",
+      "current": true,
+      "highlights": [
+        "Designing and implementing 1Go, an internal SDK adopted as the standard foundation for every Go developer across 1Password.",
+        "Unifying configuration, logging, tracing, and service scaffolding behind a single ergonomic API so teams can ship secure services without reinventing the basics.",
+        "Setting Go-wide engineering standards and mentoring teams on idiomatic, production-grade patterns for a security-first organization."
+      ],
+      "stack": ["Go", "SDK Design", "OAuth2", "Distributed Systems"]
+    },
+    {
       "company": "Coinbase",
       "role": "Senior Software Engineer (Contractor)",
       "period": "2026",

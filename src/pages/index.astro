@@ -1,0 +1,29 @@
+---
+import { Marked } from 'marked';
+import Markdown from '../layouts/Markdown.astro';
+import { resume, resumeToMarkdown } from '../resume';
+
+// breaks: true keeps the single-newline contact/stack lines on separate lines,
+// matching how the source markdown reads.
+const marked = new Marked({ gfm: true, breaks: true });
+const html = await marked.parse(resumeToMarkdown());
+
+const { name, title, tagline } = resume.profile;
+const pdfName = `${name.replace(/\s+/g, '-')}-Resume.pdf`;
+---
+
+<Markdown title={`${name} — ${title}`} description={tagline}>
+  <nav class="actions actions--top">
+    <a href="/resume.pdf" download={pdfName}>Download PDF</a>
+    <span aria-hidden="true">·</span>
+    <a href="/resume.md">resume.md</a>
+  </nav>
+
+  <main class="markdown-body" set:html={html} />
+
+  <footer class="actions actions--bottom">
+    <a href="/resume.pdf" download={pdfName}>Download PDF</a>
+    <span aria-hidden="true">·</span>
+    <a href="/resume.md">resume.md</a>
+  </footer>
+</Markdown>
