@@ -2,14 +2,14 @@
   "profile": {
     "name": "Ali Najafizadeh",
     "title": "Lead Software Engineer",
-    "tagline": "I build resilient distributed systems and the developer tools that make them a joy to work with.",
+    "tagline": "I build distributed systems, and the tooling that keeps them workable for the teams who run them.",
     "location": "Toronto, Ontario",
     "email": "a.najafizadeh@gmail.com",
     "phone": "available upon request",
     "summary": [
-      "Experienced software engineer with a strong background in building distributed systems and contributing to high-impact, developer-facing platforms. Over 14 years of experience working with Go, specializing in scalable backend components, resource optimization, and developer experience.",
-      "Proven ability to work independently and alongside highly technical teams, leading initiatives like distributed tracing, identity management, and internal SDK platforms. Skilled in authentication and authorization protocols such as OAuth2 and SSO.",
-      "Comfortable working asynchronously in fast-paced, remote-first environments. Passionate about secure access, user identity, and tooling that quietly removes friction for entire engineering organizations."
+      "Backend engineer who builds the things other engineers build on. Fourteen years of Go, spent on distributed systems, developer platforms, and the unglamorous plumbing (configuration, tracing, code generation, release tooling) that decides whether a team ships or stalls.",
+      "I gravitate to the problem nobody has scoped yet. A Rails monolith that has to become services without a maintenance window. A fleet of microservices with no way to see a request cross them. Every team writing the same bootstrap code a slightly different way. My pattern is the same each time: build the first version myself, prove it under real traffic, then turn it into the standard everyone actually wants to adopt.",
+      "Comfortable with identity and access work, from OAuth2 and SSO to payment integrations. Remote and async by habit, and at my best when the problem is ambiguous and the fix has to survive contact with production."
     ]
   },
   "social": [
@@ -40,7 +40,7 @@
     },
     {
       "value": "8",
-      "label": "Companies led at"
+      "label": "Companies shipped at"
     }
   ],
   "interests": [
@@ -78,7 +78,7 @@
     {
       "name": "orc",
       "tagline": "Durable workflow orchestrator for Go, backed by SQLite",
-      "description": "A lightweight, embeddable, durable workflow orchestrator. Write ordinary Go functions and orc checkpoints their inputs, step outputs, and completion to SQLite — surviving crashes and resuming in-flight workflows. Includes durable queues, inter-workflow messaging, cron scheduling, and a bundled web dashboard.",
+      "description": "A lightweight, embeddable, durable workflow orchestrator. Write ordinary Go functions and orc checkpoints their inputs, step outputs, and completion to SQLite, so a crash resumes instead of losing work. Includes durable queues, inter-workflow messaging, cron scheduling, and a bundled web dashboard.",
       "url": "https://github.com/ella-to/orc",
       "language": "Go",
       "tags": ["Workflows", "SQLite", "Durable Execution"],
@@ -86,8 +86,8 @@
     },
     {
       "name": "ella",
-      "tagline": "A compiler that generates Go & TypeScript HTTP clients and servers",
-      "description": "Yet another compiler, designed from 12+ years of building backends and APIs. From a simple, readable schema IDL it emits almost perfectly optimized, handcrafted code you can actually read. Supports six HTTP communication patterns including SSE, file uploads, and binary streaming.",
+      "tagline": "A compiler that generates Go and TypeScript HTTP clients and servers",
+      "description": "A compiler shaped by 12+ years of building backends and APIs. From a small, readable schema IDL it emits Go and TypeScript code that reads like something a careful engineer wrote by hand. Covers six HTTP communication patterns, including SSE, file uploads, and binary streaming.",
       "url": "https://github.com/ella-to/ella",
       "language": "Go",
       "tags": ["Compiler", "RPC", "Code Generation"],
@@ -96,7 +96,7 @@
     {
       "name": "bus",
       "tagline": "A persistent, high-performance message bus",
-      "description": "A lightweight message bus with zero external dependencies — no Redis, Kafka, or RabbitMQ required. Persistent by default with append-only logs, HTTP/SSE transport for any language, pattern matching, request/reply, optional NaCl encryption, and automatic redelivery.",
+      "description": "A message bus with no external dependencies, so no Redis, Kafka, or RabbitMQ to operate. Persistent by default on append-only logs, with HTTP/SSE transport that any language can speak, pattern matching, request/reply, optional NaCl encryption, and automatic redelivery.",
       "url": "https://github.com/ella-to/bus",
       "language": "Go",
       "tags": ["Message Bus", "Event-Driven", "SSE"],
@@ -105,7 +105,7 @@
     {
       "name": "flex",
       "tagline": "A cell-based flexbox layout engine for the terminal",
-      "description": "A composable layout engine rendered with lipgloss v2 and ready to drop into Bubble Tea v2. Synthesizes exact integer cell sizing with a declarative Fit / Fixed / Grow model and first-class text alignment for precise, responsive terminal UIs.",
+      "description": "A composable layout engine rendered with lipgloss v2 and ready to drop into Bubble Tea v2. Combines exact integer cell sizing with a declarative Fit / Fixed / Grow model and first-class text alignment, for terminal UIs that stay correct as they resize.",
       "url": "https://github.com/ella-to/flex",
       "language": "Go",
       "tags": ["TUI", "Layout Engine", "Bubble Tea"],
@@ -114,7 +114,7 @@
     {
       "name": "sahar",
       "tagline": "A declarative layout engine in Go",
-      "description": "A composable layout engine with a clean multi-pass algorithm and a Fit / Fixed / Grow sizing model with full alignment — the ergonomic foundation that inspired flex.",
+      "description": "A composable layout engine built on a clean multi-pass algorithm, with a Fit / Fixed / Grow sizing model and full alignment. The ergonomic foundation that flex grew out of.",
       "url": "https://github.com/ella-to/sahar",
       "language": "Go",
       "tags": ["Layout Engine", "Rendering"]
@@ -122,7 +122,7 @@
     {
       "name": "immuta",
       "tagline": "A simple immutable, append-only log",
-      "description": "A focused append-only log library providing durable, ordered storage — the persistence backbone behind the bus message broker.",
+      "description": "A focused append-only log library for durable, ordered storage. It is the persistence layer underneath the bus message broker.",
       "url": "https://github.com/ella-to/immuta",
       "language": "Go",
       "tags": ["Storage", "Append-Only Log"]
@@ -130,7 +130,7 @@
     {
       "name": "jsonrpc",
       "tagline": "JSON-RPC v2 over HTTP, TCP and UDP",
-      "description": "A fresh take on JSON-RPC v2 in Go with multi-transport support, designed for simple, predictable service communication.",
+      "description": "A fresh take on JSON-RPC v2 in Go with multi-transport support, built for service communication that stays simple and predictable.",
       "url": "https://github.com/ella-to/jsonrpc",
       "language": "Go",
       "tags": ["RPC", "Networking"]
@@ -138,7 +138,7 @@
     {
       "name": "sqlite",
       "tagline": "A set of ergonomic tools on top of the SQLite Go library",
-      "description": "A wrapper and toolchain around SQLite in Go, providing pooling and ergonomic helpers used as the storage layer for orc and other ella.to projects.",
+      "description": "A wrapper and toolchain around SQLite in Go, with pooling and helpers that make the common cases short. It is the storage layer for orc and the other ella.to projects.",
       "url": "https://github.com/ella-to/sqlite",
       "language": "Go",
       "tags": ["SQLite", "Database"]
@@ -146,7 +146,7 @@
     {
       "name": "selfupdate.go",
       "tagline": "Self-update toolchain for Go CLI programs",
-      "description": "A dead-simple SDK and CLI for updating Go binaries that leverages GitHub Releases and Actions, letting any Go application keep itself up to date.",
+      "description": "A small SDK and CLI for updating Go binaries on top of GitHub Releases and Actions, so any Go application can keep itself current without a separate distribution story.",
       "url": "https://github.com/blockthrough/selfupdate.go",
       "language": "Go",
       "tags": ["CLI", "Tooling", "GitHub Actions"]
@@ -154,7 +154,7 @@
     {
       "name": "microui",
       "tagline": "A tiny immediate-mode UI library for Go",
-      "description": "A pure-Go (no cgo, no dependencies) immediate-mode UI library ported from rxi/microui. It is renderer-agnostic — each frame it emits a list of draw commands you render with any backend — and ships built-in controls (windows, panels, buttons, sliders, textboxes, trees, popups) plus a ready-made terminal renderer.",
+      "description": "A pure-Go immediate-mode UI library ported from rxi/microui, with no cgo and no dependencies. It is renderer-agnostic, emitting a list of draw commands each frame for any backend to draw, and ships built-in controls (windows, panels, buttons, sliders, textboxes, trees, popups) plus a ready-made terminal renderer.",
       "url": "https://github.com/ella-to/microui",
       "language": "Go",
       "tags": ["UI", "Immediate Mode", "TUI"]
