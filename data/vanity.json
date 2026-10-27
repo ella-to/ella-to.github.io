@@ -33,5 +33,6 @@
     { "name": "state" },
     { "name": "ecs" },
     { "name": "binpack" }
+    { "name": "gundb" }
   ]
 }
