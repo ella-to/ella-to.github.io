@@ -32,7 +32,7 @@
     { "name": "ifac" },
     { "name": "state" },
     { "name": "ecs" },
-    { "name": "binpack" }
+    { "name": "binpack" },
     { "name": "gundb" }
   ]
 }
