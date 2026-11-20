@@ -33,6 +33,7 @@
     { "name": "state" },
     { "name": "ecs" },
     { "name": "binpack" },
-    { "name": "gundb" }
+    { "name": "gundb" },
+    { "name": "gitk" }
   ]
 }
