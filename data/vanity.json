@@ -34,6 +34,7 @@
     { "name": "ecs" },
     { "name": "binpack" },
     { "name": "gundb" },
-    { "name": "gitk" }
+    { "name": "gitk" },
+    { "name": "simplefs" }
   ]
 }
