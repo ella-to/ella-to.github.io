@@ -43,12 +43,7 @@ export function resumeToMarkdown(data: Resume = resume): string {
   // --- Experience ---
   out.push('---');
   out.push('## Experience');
-  for (const job of experience) {
-    out.push(`### ${job.role} — ${job.company}`);
-    out.push(`**${[job.period, job.location].filter(Boolean).join(' · ')}**`);
-    out.push(bullets(job.highlights));
-    if (job.stack?.length) out.push(`**${job.stack.join(' · ')}**`);
-  }
+  out.push(experience);
 
   // --- Open Source ---
   out.push('---');
