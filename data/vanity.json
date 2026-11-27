@@ -35,6 +35,7 @@
     { "name": "binpack" },
     { "name": "gundb" },
     { "name": "gitk" },
-    { "name": "simplefs" }
+    { "name": "simplefs" },
+    { "name": "datacat" }
   ]
 }
